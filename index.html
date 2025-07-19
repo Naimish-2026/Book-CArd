@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="carousel-container">
+        <button id="prev-btn" class="nav-btn"></button>
+
+        <div class="carousel-slide">
+            <img src="" alt="Book Cover" class="book-cover">
+            <div class="book-info">
+                <h2 class="book-title"></h2>
+                <p class="book-description"></p>
+                
+                <div class="audio-player">
+                    <button id="play-pause-btn" class="player-btn"></button>
+                    <input type="range" id="progress-bar" value="0" step="0.1">
+                </div>
+            </div>
+        </div>
+
+        <button id="next-btn" class="nav-btn"></button>
+
+        <audio id="audio-source" src=""></audio>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

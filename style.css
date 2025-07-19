@@ -1,0 +1,244 @@
+/* style.css */
+:root {
+    --primary-color: #000000; /* Yellow background */
+    --text-color: #ffffff;    /* Dark text */
+    --background-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--primary-color);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding-right: 60px;
+    padding-left: 70px;
+}
+
+.book-cover {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.book-info {
+    color: var(--text-color);
+    flex-grow: 1; /* Allows text block to take available space */
+}
+
+.book-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: yellow;
+}
+
+.book-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* --- Custom Audio Player --- */
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow; /* Icon color */
+}
+
+/* Play/Pause Icons using SVG for crispness */
+#play-pause-btn.play-icon::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>');
+}
+#play-pause-btn.pause-icon::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>');
+}
+
+
+/* --- Custom Progress Bar --- */
+#progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Thumb (the draggable circle) */
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    border: none;
+}
+
+#progress-bar::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--text-color);
+    border-radius: 50%;
+    border: none;
+}
+
+/* --- Navigation Buttons --- */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0 15px;
+    user-select: none; /* Prevents text selection */
+    z-index: 10;
+}
+
+#prev-btn { left: 0; }
+#next-btn { right: 0; }
+
+/* Hide the default audio player */
+#audio-source {
+    display: none;
+}
+
+/* --- Custom SVG Navigation Icons --- */
+/* Add this to the end of your style.css file */
+
+#prev-btn::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48" fill="%231a1a1a"><path d="M561-240 320-481l241-241 43 43-198 198 198 198-43 43Z"/></svg>');
+}
+
+#next-btn::before {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48" fill="%231a1a1a"><path d="m375-240-43-43 198-198-198-198 43-43 241 241-241 241Z"/></svg>');
+}
+
+/* style.css */
+
+/* ... (all the previous CSS code remains here) ... */
+
+
+/* --- Mobile Responsiveness --- */
+/* Apply these styles on screens 768px wide or smaller */
+@media (max-width: 768px) {
+    body {
+        /* Allow scrolling on small devices */
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .carousel-container {
+        /* Use more screen width and adjust padding */
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .carousel-slide {
+        /* Stack elements vertically instead of side-by-side */
+        flex-direction: column;
+        text-align: center; /* Center-align text for the new layout */
+        gap: 20px;
+    }
+    
+    .book-cover {
+        /* Make the book cover smaller for mobile */
+        width: 180px;
+        height: 270px;
+    }
+
+    .book-title {
+        /* Slightly smaller title for mobile */
+        font-size: 1.75rem;
+    }
+
+    .book-description {
+        /* Override parent's center-align for better readability */
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    .audio-player {
+        /* Stack the button below the progress bar */
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 20px; /* Space between progress bar and button */
+        width: 100%;
+    }
+
+    #progress-bar {
+        width: 90%;
+    }
+
+    .player-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-btn {
+        /* Reposition arrows to be vertically centered on the book cover */
+        top: 155px; /* (270px / 2) + 20px padding */
+        font-size: 2.5rem;
+    }
+
+    .carousel-slide {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+}
