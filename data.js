@@ -2,20 +2,20 @@
 
 const books = [
   {
-    title: "The Creative Act: A Way of Being",
-    description: "A masterfully written book about the creative process. Rick Rubin, a legendary music producer, shares his wisdom on what it means to be an artist and how to cultivate creativity in any field.",
+    title: "The Art of War ",
+    description: "A timeless guide to strategy, leadership, and the art of winning without battle.",
     imageSrc: "assets/a1.png", // Replace with your image path
     audioSrc: "assets/1.mp3"  // Replace with your audio file path
   },
   {
-    title: "Atomic Habits",
-    description: "An easy and proven way to build good habits and break bad ones. James Clear presents a practical framework for improving every day, no matter your goals.",
+    title: "White Nights",
+    description: "A bittersweet story of a lonely dreamer’s brief encounter with love during four nights in St. Petersburg.",
     imageSrc: "assets/a2.png", // Replace with your image path
     audioSrc: "assets/1.mp3"  // Replace with your audio file path
   },
   {
-    title: "Sapiens: A Brief History of Humankind",
-    description: "A groundbreaking narrative of humanity's creation and evolution that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be 'human'.",
+    title: "The Metamorphosis",
+    description: "A surreal tale of Gregor Samsa’s shocking transformation, exploring isolation and the fragility of human identity.",
     imageSrc: "assets/a3.png", // Replace with your image path
     audioSrc: "assets/1.mp3"  // Replace with your audio file path
   }
